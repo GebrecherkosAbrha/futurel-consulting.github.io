@@ -8,9 +8,8 @@ Visit the website: [FutureL Consulting](https://gebrecherkosabrha.github.io/futu
 ## ✨ Features
 - Responsive design for all devices
 - Dark/Light mode toggle
-- Smooth scrolling navigation
 - Interactive service cards
-- Contact form with validation
+- Contact form
 - Modern UI with animations
 
 ## 🛠️ Built With
@@ -18,29 +17,6 @@ Visit the website: [FutureL Consulting](https://gebrecherkosabrha.github.io/futu
 - CSS3
 - JavaScript
 - Vite
-- Intersection Observer API
-- Local Storage for theme preference
-
-## 🔧 Installation & Setup
-1. Clone the repository
-   ```bash
-   git clone https://github.com/GebrecherkosAbrha/futurel-consulting.github.io.git
-   ```
-
-2. Install dependencies
-   ```bash
-   npm install
-   ```
-
-3. Run development server
-   ```bash
-   npm run dev
-   ```
-
-4. Build for production
-   ```bash
-   npm run build
-   ```
 
 ## 📱 Contact
 - Email: contact@futurelconsulting.com
