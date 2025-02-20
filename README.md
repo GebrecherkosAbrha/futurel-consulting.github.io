@@ -22,6 +22,3 @@ Visit the website: [FutureL Consulting](https://gebrecherkosabrha.github.io/futu
 - Email: contact@futurelconsulting.com
 - LinkedIn: [FutureL Consulting](https://www.linkedin.com/company/futurel-consulting)
 - GitHub: [FutureL-Consulting](https://github.com/FutureL-Consulting)
-
-## 📄 License
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details. 
