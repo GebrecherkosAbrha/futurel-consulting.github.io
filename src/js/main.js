@@ -22,13 +22,30 @@ document.addEventListener('DOMContentLoaded', function() {
     // Form Validation and Submission
     const contactForm = document.getElementById('contactForm');
     if (contactForm) {
+        let submitCount = 0;
+        const MAX_SUBMISSIONS = 5;
+        const RESET_TIME = 3600000; // 1 hour
+
         contactForm.addEventListener('submit', async function(e) {
             e.preventDefault();
             
+            // Basic rate limiting
+            submitCount++;
+            if (submitCount > MAX_SUBMISSIONS) {
+                alert('Too many attempts. Please try again later.');
+                return;
+            }
+
             // Basic validation
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const message = document.getElementById('message').value;
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const message = document.getElementById('message').value.trim();
+            
+            // Basic security check
+            if (name.length > 100 || email.length > 100 || message.length > 1000) {
+                alert('Input length exceeds maximum allowed');
+                return;
+            }
             
             if (!name || !email || !message) {
                 alert('Please fill in all fields');
@@ -112,13 +129,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
     darkModeToggle.addEventListener('click', () => {
         const currentTheme = document.body.getAttribute('data-theme');
-        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        const newTheme = (currentTheme === 'dark' ? 'light' : 'dark');
         
-        document.body.setAttribute('data-theme', newTheme);
-        darkModeToggle.textContent = newTheme === 'dark' ? '☀️' : '🌙';
-        
-        // Optionally save the preference
-        localStorage.setItem('theme', newTheme);
+        // Sanitize theme value before setting
+        if (['dark', 'light'].includes(newTheme)) {
+            document.body.setAttribute('data-theme', newTheme);
+            darkModeToggle.textContent = newTheme === 'dark' ? '☀️' : '🌙';
+            localStorage.setItem('theme', newTheme);
+        }
     });
 
     // Check for saved theme preference
