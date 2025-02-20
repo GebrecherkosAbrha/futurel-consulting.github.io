@@ -124,7 +124,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize dark mode based on user's system preference
     if (prefersDarkScheme.matches) {
         document.body.setAttribute('data-theme', 'dark');
-        darkModeToggle.textContent = '☀️';
+        darkModeToggle.textContent = '🌞';
     }
 
     darkModeToggle.addEventListener('click', () => {
@@ -134,7 +134,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Sanitize theme value before setting
         if (['dark', 'light'].includes(newTheme)) {
             document.body.setAttribute('data-theme', newTheme);
-            darkModeToggle.textContent = newTheme === 'dark' ? '☀️' : '🌙';
+            darkModeToggle.textContent = newTheme === 'dark' ? '🌞' : '🌑';
             localStorage.setItem('theme', newTheme);
         }
     });
@@ -143,6 +143,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme) {
         document.body.setAttribute('data-theme', savedTheme);
-        darkModeToggle.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
+        darkModeToggle.textContent = savedTheme === 'dark' ? '🌞' : '🌑';
     }
 }); 
