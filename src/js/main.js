@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 return;
             }
             
-            // Form submission (example using Formspree)
+            // Form submission using Formspree
             try {
                 const response = await fetch('https://formspree.io/f/xzzdopng', {
                     method: 'POST',
@@ -70,8 +70,22 @@ document.addEventListener('DOMContentLoaded', function() {
                 });
                 
                 if (response.ok) {
-                    alert('Message sent successfully!');
-                    contactForm.reset();
+                    // Create and show custom success message
+                    const successMessage = document.createElement('div');
+                    successMessage.className = 'success-message fade-in';
+                    successMessage.innerHTML = `
+                        <h3>Thank you for reaching out, ${name}!</h3>
+                        <p>We've received your message and will get back to you within 24-48 hours.</p>
+                        <p>Have a great day!</p>
+                    `;
+                    
+                    // Replace form with success message
+                    contactForm.style.opacity = '0';
+                    setTimeout(() => {
+                        contactForm.style.display = 'none';
+                        contactForm.parentNode.appendChild(successMessage);
+                        contactForm.reset();
+                    }, 300);
                 } else {
                     throw new Error('Failed to send message');
                 }
