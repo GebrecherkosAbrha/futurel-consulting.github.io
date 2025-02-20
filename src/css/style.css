@@ -49,10 +49,28 @@ body {
 }
 
 .logo {
-    font-size: 1.5rem;
-    font-weight: 700;
     color: var(--primary-color);
     text-decoration: none;
+    display: flex;
+    align-items: center;
+    padding: 0.5rem;
+    transition: transform 0.4s ease;
+}
+
+.logo:hover {
+    transform: scale(1.1);
+}
+
+.logo-img {
+    height: 80px;
+    width: auto;
+    object-fit: contain;
+    filter: brightness(1);
+    transition: all 0.4s ease;
+}
+
+.logo:hover .logo-img {
+    filter: brightness(1.1);
 }
 
 .nav-links {
@@ -259,6 +277,18 @@ body {
     color: var(--primary-color);
 }
 
+.footer-logo {
+    height: 70px;
+    width: auto;
+    margin-bottom: 1rem;
+    object-fit: contain;
+    transition: transform 0.4s ease;
+}
+
+.footer-logo:hover {
+    transform: scale(1.1);
+}
+
 /* Animations */
 .fade-in {
     opacity: 0;
@@ -331,6 +361,14 @@ body {
     
     .services-grid {
         grid-template-columns: 1fr;
+    }
+    
+    .logo-img {
+        height: 60px;
+    }
+    
+    .footer-logo {
+        height: 50px;
     }
 }
 
@@ -544,4 +582,13 @@ body {
 /* Dark mode support for success message */
 [data-theme="dark"] .success-message {
     background: #2d2d2d;
+}
+
+/* Dark mode adjustments for logo */
+[data-theme="dark"] .logo-img {
+    filter: brightness(1.2);
+}
+
+[data-theme="dark"] .logo:hover .logo-img {
+    filter: brightness(1.3);
 } 
