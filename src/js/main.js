@@ -70,7 +70,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 });
                 
                 if (response.ok) {
-                    // Create and show custom success message
                     const successMessage = document.createElement('div');
                     successMessage.className = 'success-message fade-in';
                     successMessage.innerHTML = `
@@ -79,12 +78,21 @@ document.addEventListener('DOMContentLoaded', function() {
                         <p>Have a great day!</p>
                     `;
                     
-                    // Replace form with success message
                     contactForm.style.opacity = '0';
                     setTimeout(() => {
                         contactForm.style.display = 'none';
                         contactForm.parentNode.appendChild(successMessage);
                         contactForm.reset();
+                        
+                        // Keep the success message visible for 5 seconds
+                        setTimeout(() => {
+                            successMessage.style.opacity = '0';
+                            setTimeout(() => {
+                                successMessage.remove();
+                                contactForm.style.display = 'block';
+                                contactForm.style.opacity = '1';
+                            }, 1000);
+                        }, 5000);
                     }, 300);
                 } else {
                     throw new Error('Failed to send message');

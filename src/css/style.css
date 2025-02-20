@@ -151,6 +151,7 @@ body {
 .contact-form {
     max-width: 600px;
     margin: 0 auto;
+    transition: opacity 0.3s ease;
 }
 
 .form-group {
@@ -514,6 +515,7 @@ body {
     max-width: 600px;
     margin: 0 auto;
     animation: slideIn 0.5s ease-out;
+    transition: opacity 1s ease;
 }
 
 .success-message h3 {
