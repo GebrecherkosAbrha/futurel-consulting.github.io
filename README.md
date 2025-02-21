@@ -1,6 +1,6 @@
 # FutureL Consulting Website
 
-Website for FutureL Consulting, a Sweden-based technology solutions provider specializing in software development, data engineering, and analytics.
+Website for FutureL Consulting, a Sweden-based technology solutions provider specializing in software development, API integration, data engineering, and Data analytics.
 
 ## 🚀 Live Demo
 Visit the website: [FutureL Consulting](https://gebrecherkosabrha.github.io/futurel-consulting.github.io/)
